@@ -2,8 +2,8 @@
 
 namespace Maidomax\DatadogLogger\Tests;
 
-use Maidomax\DatadogLogger\DatadogLogger;
 use Maidomax\DatadogLogger\DatadogHttpHandler;
+use Maidomax\DatadogLogger\DatadogLogger;
 use Monolog\Logger;
 
 class DatadogLoggerTest extends TestCase
