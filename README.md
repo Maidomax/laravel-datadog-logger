@@ -57,16 +57,16 @@ DATADOG_API_KEY=your_datadog_api_key_here
 # US5: https://http-intake.logs.us5.datadoghq.com/api/v2/logs
 DATADOG_LOG_INTAKE_URL=https://http-intake.logs.datadoghq.com/api/v2/logs
 
-# Optional: Service name (defaults to app name)
+# Optional: Service name (defaults to 'laravel')
 DATADOG_SERVICE=my-laravel-app
 
-# Optional: Environment (defaults to APP_ENV)
+# Optional: Environment (defaults to APP_ENV, then 'local')
 DATADOG_ENVIRONMENT=production
 
 # Optional: Minimum log level (defaults to debug)
 DATADOG_LOG_LEVEL=info
 
-# Optional: Data source identifier (defaults to APP_NAME, then 'laravel')
+# Optional: Data source identifier (defaults to 'laravel')
 DATADOG_SOURCE=my-custom-source
 
 # Optional: HTTP timeout in seconds (defaults to 5)
@@ -146,7 +146,7 @@ Log::info('User action performed', [
 
 Logs sent to Datadog will include the following fields:
 
-- `ddsource`: Data source identifier (configurable via `DATADOG_SOURCE`, defaults to `APP_NAME`, then "laravel")
+- `ddsource`: Data source identifier (configurable via `DATADOG_SOURCE`, defaults to "laravel")
 - `ddtags`: Environment and service tags (e.g., "env:production,service:my-app")
 - `hostname`: Server hostname
 - `message`: The log message

@@ -35,7 +35,7 @@ return [
     | which service the logs are coming from.
     |
     */
-    'service' => env('DATADOG_SERVICE', config('app.name', 'laravel')),
+    'service' => env('DATADOG_SERVICE', 'laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     | The environment name to be used in Datadog logs (e.g., production, staging, local).
     |
     */
-    'environment' => env('DATADOG_ENVIRONMENT', app()->environment()),
+    'environment' => env('DATADOG_ENVIRONMENT', env('APP_ENV', 'local')),
 
     /*
     |--------------------------------------------------------------------------
@@ -53,10 +53,10 @@ return [
     |--------------------------------------------------------------------------
     |
     | The data source identifier used in Datadog logs. This helps identify
-    | the type/source of the logs in Datadog. Defaults to APP_NAME, then 'laravel'.
+    | the type/source of the logs in Datadog.
     |
     */
-    'source' => env('DATADOG_SOURCE', env('APP_NAME', 'laravel')),
+    'source' => env('DATADOG_SOURCE', 'laravel'),
 
     /*
     |--------------------------------------------------------------------------
