@@ -101,6 +101,9 @@ class DatadogHttpHandler extends AbstractProcessingHandler
                 'verify_peer' => true,
                 'verify_peer_name' => true,
             ],
+            'socket' => [
+                'timeout' => $this->connectionTimeout,
+            ],
         ]);
 
         // Send async to avoid blocking the application
