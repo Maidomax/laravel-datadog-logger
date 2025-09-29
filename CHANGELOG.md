@@ -10,7 +10,7 @@ All notable changes to `laravel-datadog-logger` will be documented in this file.
 - Configurable service provider with auto-discovery support
 - Support for all Datadog regions (US, EU, US3, US5)
 - Automatic tagging with environment and service information
-- Asynchronous log transmission to avoid blocking application
+- HTTP-based log transmission to Datadog
 - Comprehensive test suite with PHPUnit
 - Full documentation and usage examples
 - GitHub Actions CI/CD pipeline for automated testing
@@ -37,4 +37,3 @@ All notable changes to `laravel-datadog-logger` will be documented in this file.
 - `DATADOG_SOURCE`: Data source (defaults to APP_NAME, then 'laravel')
 - `DATADOG_TIMEOUT`: HTTP request timeout (default: 5s)
 - `DATADOG_CONNECTION_TIMEOUT`: Connection timeout (default: 3s)
-- `DATADOG_LOG_LEVEL`: Minimum log level (default: debug)

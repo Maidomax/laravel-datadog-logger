@@ -60,17 +60,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Level
-    |--------------------------------------------------------------------------
-    |
-    | The minimum log level that will be sent to Datadog.
-    | Available levels: emergency, alert, critical, error, warning, notice, info, debug
-    |
-    */
-    'level' => env('DATADOG_LOG_LEVEL', 'debug'),
-
-    /*
-    |--------------------------------------------------------------------------
     | HTTP Timeout
     |--------------------------------------------------------------------------
     |

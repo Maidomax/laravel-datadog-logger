@@ -63,9 +63,6 @@ DATADOG_SERVICE=my-laravel-app
 # Optional: Environment (defaults to APP_ENV, then 'local')
 DATADOG_ENVIRONMENT=production
 
-# Optional: Minimum log level (defaults to debug)
-DATADOG_LOG_LEVEL=info
-
 # Optional: Data source identifier (defaults to 'laravel')
 DATADOG_SOURCE=my-custom-source
 
@@ -93,7 +90,6 @@ Add the Datadog logging channel to your `config/logging.php`:
         'source' => env('DATADOG_SOURCE'),
         'timeout' => env('DATADOG_TIMEOUT', 5),
         'connection_timeout' => env('DATADOG_CONNECTION_TIMEOUT', 3),
-        'level' => env('DATADOG_LOG_LEVEL', 'debug'),
     ],
 
     // Example: Use Datadog alongside other logging channels
