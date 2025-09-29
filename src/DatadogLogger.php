@@ -19,7 +19,7 @@ class DatadogLogger
             $config['source'] ?? env('DATADOG_SOURCE', env('APP_NAME', 'laravel')),
             $config['timeout'] ?? env('DATADOG_TIMEOUT', 5),
             $config['connection_timeout'] ?? env('DATADOG_CONNECTION_TIMEOUT', 3),
-            Logger::DEBUG
+            null // Let DatadogHttpHandler handle the default level for compatibility
         );
 
         $formatter = new JsonFormatter();
