@@ -7,7 +7,7 @@ A Laravel package that provides seamless integration with Datadog's HTTP log int
 - 🚀 Easy integration with Laravel's logging system
 - 🌍 Support for all Datadog regions (US, EU, US3, US5)
 - 🏷️ Automatic tagging with service name and environment
-- ⚡ Asynchronous log transmission (non-blocking)
+- ⚡ HTTP-based log transmission to Datadog
 - 🔧 Configurable via environment variables or config file
 - 📦 Auto-discovery support for Laravel 5.5+
 
@@ -176,9 +176,9 @@ If the package fails to send logs to Datadog (e.g., network issues, invalid API 
 
 ## Performance Considerations
 
-- Log transmission to Datadog is performed asynchronously and will not block your application
-- Failed requests have a 5-second timeout to prevent hanging
-- Consider using a queue-based logging solution for high-volume applications
+- Log transmission to Datadog is performed synchronously via HTTP requests
+- Failed requests have a configurable timeout (default 5 seconds) to prevent hanging
+- For high-volume applications or to avoid blocking, consider using a queue-based logging solution
 
 ## Testing
 
