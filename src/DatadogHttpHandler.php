@@ -126,8 +126,8 @@ class DatadogHttpHandler extends AbstractProcessingHandler
         // Check HTTP response status if available
         if (isset($http_response_header)) {
             $statusLine = $http_response_header[0] ?? '';
-            // Extract status code from "HTTP/1.1 200 OK" format
-            if (preg_match('/\s(\d{3})\s/', $statusLine, $matches)) {
+            // Extract status code from "HTTP/1.1 200 OK" or "HTTP/1.1 200" format
+            if (preg_match('/\s(\d{3})(?:\s|$)/', $statusLine, $matches)) {
                 $statusCode = (int)$matches[1];
                 if ($statusCode < 200 || $statusCode >= 300) { // Not a 2xx status code
                     error_log(sprintf(
